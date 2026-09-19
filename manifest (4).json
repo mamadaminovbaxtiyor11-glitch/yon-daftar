@@ -1,0 +1,18 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Yon Daftar",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Yon Daftar",
+  "start_url": "/",
+  "theme_color": "#1976d2",
+  "id": "yon daftar",
+  "description": "Oddiy va qulay uzbekcha qaydlar yozish ilovasi.",
+  "lang": "uz",
+  "categories": [
+    "social",
+    "social networking"
+  ]
+}
