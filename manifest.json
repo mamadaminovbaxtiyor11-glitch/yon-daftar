@@ -1,6 +1,7 @@
 {
   "name": "Yon Daftar",
   "short_name": "Yon Daftar",
+  "description": "Oddiy va qulay o'zbekcha qaydlar yozish ilovasi.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f6f8",
