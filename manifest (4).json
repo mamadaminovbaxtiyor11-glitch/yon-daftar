@@ -1,18 +1,30 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
-  "display": "standalone",
   "name": "Yon Daftar",
-  "orientation": "any",
-  "scope": "/",
   "short_name": "Yon Daftar",
+  "id": "yon-daftar",
+  "description": "Ikki kishi o‘rtasida xabar, ovozli va video xabar yuborish hamda audio va video qo‘ng‘iroq qilish ilovasi.",
   "start_url": "/",
-  "theme_color": "#1976d2",
-  "id": "yon daftar",
-  "description": "Oddiy va qulay uzbekcha qaydlar yozish ilovasi.",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "dir": "ltr",
   "lang": "uz",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2",
   "categories": [
     "social",
     "social networking"
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
