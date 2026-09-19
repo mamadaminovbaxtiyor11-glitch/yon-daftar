@@ -1,0 +1,12 @@
+{
+  "name": "📒 Yon Daftar",
+  "short_name": "Yon Daftar",
+  "description": "Yon Daftar — yozuvlarni saqlash va qidirish uchun qulay daftar.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2",
+  "lang": "uz"
+}
