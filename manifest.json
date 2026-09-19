@@ -10,3 +10,4 @@
   "theme_color": "#1976d2",
   "lang": "uz"
 }
+<link rel="manifest" href="manifest.json">
