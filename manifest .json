@@ -1,16 +1,16 @@
 {
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
   "name": "Yon Daftar",
   "short_name": "Yon Daftar",
-  "id": "yon-daftar",
-  "description": "Ikki kishi o‘rtasida xabar, ovozli va video xabar yuborish hamda audio va video qo‘ng‘iroq qilish ilovasi.",
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
   "orientation": "any",
-  "dir": "ltr",
-  "lang": "uz",
-  "background_color": "#ffffff",
   "theme_color": "#1976d2",
+  "id": "yon-daftar",
+  "description": "Ikki kishi o‘rtasida xabar, ovozli va video xabar yuborish hamda audio va video qo‘ng‘iroq qilish ilovasi.",
+  "lang": "uz",
   "categories": [
     "social",
     "social networking"
