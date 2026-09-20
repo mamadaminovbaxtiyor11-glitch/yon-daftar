@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yon Daftar Messenger</title>
+
+  <title>Yon Daftar</title>
 
   <style>
     * {
@@ -18,127 +19,58 @@
 
     .app {
       max-width: 500px;
-      height: 100vh;
+      min-height: 100vh;
       margin: auto;
       background: white;
-      display: flex;
-      flex-direction: column;
+      padding: 20px;
     }
 
-    .header {
-      background: #075e54;
-      color: white;
-      padding: 15px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    h1 {
+      margin-top: 0;
     }
 
-    .avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #555;
-      font-weight: bold;
-    }
-
-    .user-info {
-      flex: 1;
-    }
-
-    .user-name {
-      font-size: 17px;
-      font-weight: bold;
-    }
-
-    .status {
-      font-size: 12px;
-      opacity: 0.85;
-      margin-top: 3px;
-    }
-
-    .chat {
-      flex: 1;
-      padding: 15px;
-      overflow-y: auto;
-      background: #e5ddd5;
-    }
-
-    .message {
-      max-width: 78%;
-      padding: 9px 10px;
-      margin-bottom: 10px;
+    textarea,
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
       border-radius: 10px;
-      word-wrap: break-word;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
 
-    .received {
-      background: white;
-      margin-right: auto;
-    }
-
-    .sent {
-      background: #dcf8c6;
-      margin-left: auto;
-    }
-
-    .message-time {
-      font-size: 10px;
-      color: #777;
-      text-align: right;
-      margin-top: 4px;
-    }
-
-    .checks {
-      margin-left: 4px;
-      font-weight: bold;
-    }
-
-    .read {
-      color: #1687d9;
-    }
-
-    .bottom {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px;
-      background: #f0f0f0;
-    }
-
-    .message-input {
-      flex: 1;
-      border: none;
-      outline: none;
-      padding: 12px 15px;
-      border-radius: 22px;
-      font-size: 15px;
+    textarea {
+      min-height: 150px;
+      resize: vertical;
     }
 
     button {
       border: none;
+      border-radius: 9px;
+      padding: 12px 15px;
+      font-size: 15px;
       cursor: pointer;
+      margin: 4px 2px;
     }
 
-    .send {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
+    .save {
       background: #075e54;
       color: white;
-      font-size: 19px;
     }
 
-    .mic {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: transparent;
-      font-size: 20px;
+    .search {
+      background: #128c7e;
+      color: white;
+    }
+
+    .backup {
+      background: #555;
+      color: white;
+    }
+
+    .delete {
+      background: #c62828;
+      color: white;
     }
 
     .login {
@@ -149,6 +81,7 @@
       align-items: center;
       justify-content: center;
       padding: 25px;
+      z-index: 100;
     }
 
     .login-box {
@@ -156,48 +89,49 @@
       max-width: 360px;
     }
 
-    .login-box h1 {
+    .login-box h2 {
       text-align: center;
       margin-bottom: 25px;
     }
 
-    .login-box input {
-      width: 100%;
-      padding: 13px;
-      margin-bottom: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      outline: none;
-    }
-
-    .login-btn,
-    .register-btn {
-      width: 100%;
-      padding: 13px;
-      color: white;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
     .login-btn {
+      width: 100%;
       background: #075e54;
+      color: white;
     }
 
     .register-btn {
-      margin-top: 10px;
+      width: 100%;
       background: #128c7e;
+      color: white;
     }
 
-    .logout-btn {
-      display: none;
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 10;
-      padding: 8px 12px;
+    .logout {
       background: #c62828;
       color: white;
-      border-radius: 6px;
+    }
+
+    .account {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .note {
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 10px;
+      white-space: pre-wrap;
+    }
+
+    .time {
+      font-size: 11px;
+      color: #777;
+      margin-top: 8px;
     }
   </style>
 </head>
@@ -206,61 +140,56 @@
 
   <div class="app">
 
-    <div class="header">
-      <div class="avatar">A</div>
+    <h1>📒 Yon Daftar</h1>
 
-      <div class="user-info">
-        <div class="user-name" id="userName">@anor_user</div>
-        <div class="status" id="userStatus">offline</div>
-      </div>
-
-      <div>⋮</div>
+    <div class="account">
+      👤 <span id="userEmail">Yuklanmoqda...</span>
+      <button class="logout" onclick="logoutUser()">Chiqish</button>
     </div>
 
-    <div class="chat" id="chat">
+    <textarea
+      id="noteInput"
+      placeholder="Bu yerga yozing..."
+    ></textarea>
 
-      <div class="message received">
-        Salom 👋
-        <div class="message-time">
-          08:20
-        </div>
-      </div>
+    <button class="save" onclick="saveNote()">💾 Saqlash</button>
 
-    </div>
+    <br>
 
-    <div class="bottom">
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="🔍 Daftardan qidiring..."
+      oninput="showNotes()"
+    >
 
-      <button class="mic" onclick="voiceMessage()">🎙️</button>
+    <button class="backup" onclick="backupNotes()">📤 Zaxira olish</button>
 
-      <input
-        id="messageInput"
-        class="message-input"
-        type="text"
-        placeholder="Xabar yozing..."
-        onkeydown="if(event.key === 'Enter') sendMessage()"
-      >
+    <button class="backup" onclick="restoreNotes()">📥 Zaxirani tiklash</button>
 
-      <button class="send" onclick="sendMessage()">➤</button>
+    <p>
+      Jami: <b id="total">0</b> ta yozuv
+    </p>
 
-    </div>
+    <button class="delete" onclick="deleteAllNotes()">
+      🗑 Hammasini o‘chirish
+    </button>
+
+    <div id="notes"></div>
 
   </div>
 
-  <button
-    class="logout-btn"
-    id="logoutBtn"
-    onclick="logoutUser()">
-    Chiqish
-  </button>
+
+  <!-- Firebase login -->
 
   <div class="login" id="login">
 
     <div class="login-box">
 
-      <h1>Yon Daftar</h1>
+      <h2>📒 Yon Daftar</h2>
 
       <input
-        id="username"
+        id="email"
         type="email"
         placeholder="Email"
       >
@@ -271,21 +200,18 @@
         placeholder="Parol"
       >
 
-      <button
-        class="login-btn"
-        onclick="loginUser()">
+      <button class="login-btn" onclick="loginUser()">
         Kirish
       </button>
 
-      <button
-        class="register-btn"
-        onclick="registerUser()">
+      <button class="register-btn" onclick="registerUser()">
         Ro‘yxatdan o‘tish
       </button>
 
     </div>
 
   </div>
+
 
   <script type="module">
 
@@ -320,17 +246,15 @@
     window.registerUser = async function() {
 
       const email =
-        document.getElementById("username").value.trim();
+        document.getElementById("email").value.trim();
 
       const password =
         document.getElementById("password").value.trim();
-
 
       if (!email || !password) {
         alert("Email va parolni kiriting.");
         return;
       }
-
 
       try {
 
@@ -354,17 +278,15 @@
     window.loginUser = async function() {
 
       const email =
-        document.getElementById("username").value.trim();
+        document.getElementById("email").value.trim();
 
       const password =
         document.getElementById("password").value.trim();
-
 
       if (!email || !password) {
         alert("Email va parolni kiriting.");
         return;
       }
-
 
       try {
 
@@ -385,15 +307,7 @@
 
     window.logoutUser = async function() {
 
-      try {
-
-        await signOut(auth);
-
-      } catch (error) {
-
-        alert("Chiqishda xatolik: " + error.message);
-
-      }
+      await signOut(auth);
 
     };
 
@@ -403,131 +317,258 @@
       const login =
         document.getElementById("login");
 
-      const logoutBtn =
-        document.getElementById("logoutBtn");
-
-      const userName =
-        document.getElementById("userName");
-
-      const userStatus =
-        document.getElementById("userStatus");
+      const userEmail =
+        document.getElementById("userEmail");
 
 
       if (user) {
 
         login.style.display = "none";
 
-        logoutBtn.style.display = "block";
-
-        userName.textContent =
+        userEmail.textContent =
           user.email;
 
-        userStatus.textContent =
-          "online";
+        showNotes();
 
       } else {
 
         login.style.display = "flex";
 
-        logoutBtn.style.display = "none";
-
-        userName.textContent =
-          "@anor_user";
-
-        userStatus.textContent =
-          "offline";
+        userEmail.textContent =
+          "Kirish kerak";
 
       }
 
     });
 
 
-    window.sendMessage = function() {
+    function getNotes() {
+
+      const user =
+        auth.currentUser;
+
+      if (!user) return [];
+
+      const key =
+        "yon_daftar_notes_" + user.uid;
+
+      return JSON.parse(
+        localStorage.getItem(key) || "[]"
+      );
+
+    }
+
+
+    function setNotes(notes) {
+
+      const user =
+        auth.currentUser;
+
+      if (!user) return;
+
+      const key =
+        "yon_daftar_notes_" + user.uid;
+
+      localStorage.setItem(
+        key,
+        JSON.stringify(notes)
+      );
+
+    }
+
+
+    window.saveNote = function() {
 
       const input =
-        document.getElementById("messageInput");
+        document.getElementById("noteInput");
 
       const text =
         input.value.trim();
 
+      if (!text) {
 
-      if (text === "") {
+        alert("Avval yozuv kiriting.");
+
         return;
+
       }
 
+      const notes =
+        getNotes();
 
-      const chat =
-        document.getElementById("chat");
+      notes.unshift({
 
+        text: text,
 
-      const message =
-        document.createElement("div");
+        time: new Date().toLocaleString("uz-UZ")
 
-      message.className =
-        "message sent";
+      });
 
-
-      const time =
-        new Date();
-
-      const hours =
-        String(time.getHours()).padStart(2, "0");
-
-      const minutes =
-        String(time.getMinutes()).padStart(2, "0");
-
-
-      message.innerHTML = `
-        ${escapeHTML(text)}
-
-        <div class="message-time">
-          ${hours}:${minutes}
-          <span class="checks">✓</span>
-        </div>
-      `;
-
-
-      chat.appendChild(message);
+      setNotes(notes);
 
       input.value = "";
 
-      chat.scrollTop =
-        chat.scrollHeight;
-
-
-      setTimeout(() => {
-
-        const checks =
-          message.querySelector(".checks");
-
-        if (checks) {
-          checks.textContent = "✓✓";
-          checks.classList.add("read");
-        }
-
-      }, 1500);
+      showNotes();
 
     };
 
 
-    window.escapeHTML = function(text) {
+    window.showNotes = function() {
 
-      const div =
-        document.createElement("div");
+      const notes =
+        getNotes();
 
-      div.textContent =
-        text;
+      const search =
+        document
+          .getElementById("searchInput")
+          .value
+          .toLowerCase()
+          .trim();
 
-      return div.innerHTML;
+      const filtered =
+        notes.filter(note =>
+          note.text.toLowerCase().includes(search)
+        );
+
+      const notesBox =
+        document.getElementById("notes");
+
+      const total =
+        document.getElementById("total");
+
+      total.textContent =
+        notes.length;
+
+      notesBox.innerHTML = "";
+
+      if (filtered.length === 0) {
+
+        notesBox.innerHTML =
+          "<p>📒 Hozircha yozuv yo‘q</p>";
+
+        return;
+
+      }
+
+      filtered.forEach(note => {
+
+        const div =
+          document.createElement("div");
+
+        div.className = "note";
+
+        div.textContent =
+          note.text;
+
+        const time =
+          document.createElement("div");
+
+        time.className = "time";
+
+        time.textContent =
+          note.time;
+
+        div.appendChild(time);
+
+        notesBox.appendChild(div);
+
+      });
 
     };
 
 
-    window.voiceMessage = function() {
+    window.deleteAllNotes = function() {
 
-      alert(
-        "🎙️ Ovozli xabar funksiyasi keyingi bosqichda ulanadi."
-      );
+      if (!confirm("Barcha yozuvlar o‘chirilsinmi?")) {
+        return;
+      }
+
+      setNotes([]);
+
+      showNotes();
+
+    };
+
+
+    window.backupNotes = function() {
+
+      const notes =
+        getNotes();
+
+      const file =
+        new Blob(
+          [JSON.stringify(notes, null, 2)],
+          { type: "application/json" }
+        );
+
+      const url =
+        URL.createObjectURL(file);
+
+      const a =
+        document.createElement("a");
+
+      a.href = url;
+
+      a.download =
+        "yon-daftar-zaxira.json";
+
+      a.click();
+
+      URL.revokeObjectURL(url);
+
+    };
+
+
+    window.restoreNotes = function() {
+
+      const input =
+        document.createElement("input");
+
+      input.type = "file";
+
+      input.accept =
+        ".json";
+
+      input.onchange = function(event) {
+
+        const file =
+          event.target.files[0];
+
+        if (!file) return;
+
+        const reader =
+          new FileReader();
+
+        reader.onload = function() {
+
+          try {
+
+            const notes =
+              JSON.parse(reader.result);
+
+            if (!Array.isArray(notes)) {
+              throw new Error();
+            }
+
+            setNotes(notes);
+
+            showNotes();
+
+            alert("Zaxira tiklandi.");
+
+          } catch {
+
+            alert("Zaxira fayli noto‘g‘ri.");
+
+          }
+
+        };
+
+        reader.readAsText(file);
+
+      };
+
+      input.click();
 
     };
 
