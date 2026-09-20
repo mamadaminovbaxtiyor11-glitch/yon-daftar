@@ -4,25 +4,24 @@
   "display": "standalone",
   "name": "Yon Daftar",
   "short_name": "Yon Daftar",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/yon-daftar/",
+  "scope": "/yon-daftar/",
   "orientation": "any",
   "theme_color": "#1976d2",
-  "id": "yon-daftar",
-  "description": "Ikki kishi o‘rtasida xabar, ovozli va video xabar yuborish hamda audio va video qo‘ng‘iroq qilish ilovasi.",
+  "id": "/yon-daftar/",
+  "description": "Yon Daftar — yozuvlarni saqlash va qidirish uchun ilova.",
   "lang": "uz",
   "categories": [
-    "social",
-    "social networking"
+    "productivity"
   ],
   "icons": [
     {
-      "src": "/icons/icon-192.png",
+      "src": "/yon-daftar/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "/yon-daftar/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
